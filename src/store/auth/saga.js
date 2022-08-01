@@ -7,6 +7,8 @@ import {
     login,
     getActiveUser,
     logout,
+    setRegisterErrors,
+    setLoginError,
 } from "./slice";
 
 
@@ -18,8 +20,10 @@ function* handleRegister({ payload }) {
         yield put(setActiveUser(data.user));
 
         yield put(setToken(data.token));
-    } catch (error) {
-        console.log(error);
+    } catch (e) {
+        if (e.response.status == 422) {
+            yield put(setRegisterErrors(e.response.data.errors));
+        }
         alert("Registration failed");
     }
 }
@@ -30,7 +34,10 @@ function* handleLogin({ payload }) {
         yield put(setActiveUser(data.user));
 
         yield put(setToken(data.token));
-    } catch {
+    } catch (e) {
+        if (e.response.status == 401) {
+            yield put(setLoginError(e.response.data.errors));
+        }
         alert("Invalid credentials");
     }
 }

@@ -16,6 +16,9 @@ const authSlice = createSlice({
             first_name: "",
             last_name: "",
         },
+        loginError: null,
+        registerErrors: null,
+
 
     },
     reducers: {
@@ -24,6 +27,12 @@ const authSlice = createSlice({
         },
         setToken(state, { payload }) {
             state.token = payload;
+        },
+        setRegisterErrors: (state, { payload }) => {
+            state.registerErrors = payload;
+        },
+        setLoginError: (state, { payload }) => {
+            state.loginError = payload;
         },
         ...middlewareActions,
     },
@@ -39,4 +48,6 @@ export const {
     login,
     getActiveUser,
     logout,
+    setRegisterErrors,
+    setLoginError,
 } = authSlice.actions;

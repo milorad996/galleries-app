@@ -9,7 +9,6 @@ function AddComment({ galleryId }) {
     const dispatch = useDispatch();
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(newComment)
         dispatch(addComment({
             galleryId,
             body: newComment,

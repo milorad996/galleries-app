@@ -7,7 +7,6 @@ import { Button } from "react-bootstrap";
 function SearchComponent({ authorId }) {
     const dispatch = useDispatch();
     const handleSearch = async (e) => {
-        console.log(term);
         e.preventDefault();
         dispatch(getGalleriesByTerm(term));
     };

@@ -15,7 +15,6 @@ function AuthorGalleryPage() {
 
     const { id } = useParams();
     const dispatch = useDispatch();
-    console.log(id);
 
     useEffect(() => {
         dispatch(getAuthorGallery({
@@ -54,7 +53,7 @@ function AuthorGalleryPage() {
 
             <button
                 onClick={handleLoadMore}
-                disabled={galleries.current_page == galleries.last_page}
+                disabled={galleries?.current_page == galleries?.last_page}
             >
                 Load more
             </button>

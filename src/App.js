@@ -42,12 +42,12 @@ function App() {
           <PrivateRoute path="/galleries/edit/:id">
             <CreateNewGallery />
           </PrivateRoute>
-          <PublicRoute exact path="/galleries/:id">
+          <Route exact path="/galleries/:id">
             <ViewGalleryPage />
-          </PublicRoute>
-          <PrivateRoute exact path="/authors/:id">
+          </Route>
+          <Route exact path="/authors/:id">
             <AuthorGalleryPage />
-          </PrivateRoute>
+          </Route>
           <PublicRoute exact path="/register">
             <Register />
           </PublicRoute>

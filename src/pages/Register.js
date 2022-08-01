@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { selectRegistrationErrors } from "../store/auth/selectors";
 import { register } from "../store/auth/slice";
 
 
@@ -23,11 +24,11 @@ export default function Register() {
             dispatch(register(userData));
 
         } catch (e) {
-            console.log(e);
             setInvalidCredentials(true);
             alert("invalid credentials");
         }
     };
+
 
     return (
         <div>
@@ -62,6 +63,7 @@ export default function Register() {
                         setUserData({ ...userData, email: target.value })
                     }
                 />
+
                 <input
                     required
                     type="password"
@@ -72,6 +74,7 @@ export default function Register() {
                         setUserData({ ...userData, password: target.value })
                     }
                 />
+
                 <input
                     required
                     type="password"

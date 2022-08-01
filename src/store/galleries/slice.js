@@ -55,7 +55,7 @@ const galleriesSlice = createSlice({
             };
         },
         deleteCommentSuccess(state, { payload }) {
-            state.gallery = state.gallery.comments.filter((comment) => comment.id !== payload);
+            state.gallery["comments"] = state.gallery?.comments?.filter((comment) => comment.id !== payload);
         },
         ...middlewareActions,
     },

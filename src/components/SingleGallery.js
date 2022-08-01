@@ -14,14 +14,14 @@ function SingleGallery({
     description,
     author,
     images,
-
+    created_at,
 
 }) {
 
     const gallery = useSelector(selectGallery);
 
     const formattedDate = useFormattedDate(
-        gallery ? gallery?.created_at : "",
+        created_at,
         "yyyy-MM-dd"
     );
 
@@ -57,7 +57,7 @@ function SingleGallery({
                         <Link to={`/authors/${author?.id}`}>{author?.first_name + " " + author?.last_name}</Link>
                     </Card.Text>
                     <Card.Text>
-                        <p>Created at: {formattedDate}</p>
+                        Created at: {formattedDate}
                     </Card.Text>
                 </Card.Body>
             </Card>

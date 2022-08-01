@@ -19,7 +19,6 @@ function ViewGalleryPage() {
     const dispatch = useDispatch();
 
     const author = useSelector(selectActiveUser)
-    console.log(id);
 
     useEffect(() => {
         dispatch(getActiveUser());
@@ -59,8 +58,8 @@ function ViewGalleryPage() {
 
     const handleDeleteComment = async (id) => {
 
-
         dispatch(deleteComment(id));
+
     };
 
     return (
@@ -100,7 +99,7 @@ function ViewGalleryPage() {
                             {galleries?.comments?.map((comment) => (
 
 
-                                <p>{comment?.body} {author?.id ? (<><button key={comment?.id} onClick={() => handleDeleteComment(comment?.id)}>Delete</button></>) : <></>}</p>
+                                <p key={comment.id}>{comment?.body} {author?.id ? (<><button key={comment?.id} onClick={(e) => handleDeleteComment(comment?.id)}>Delete</button></>) : <></>}</p>
 
                             ))}
                         </div>

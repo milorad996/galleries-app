@@ -154,7 +154,7 @@ function CreateNewGallery() {
                 {newGallery.images &&
                     newGallery.images.map((x, i) => {
                         return (
-                            <div>
+                            <div key={i}>
                                 <input
                                     required
                                     key={i}

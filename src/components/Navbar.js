@@ -10,7 +10,6 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 export default function NavbarComponent() {
     const isAuthenticated = useSelector(selectIsAuthenticated);
-    console.log(isAuthenticated)
     const dispatch = useDispatch();
 
 

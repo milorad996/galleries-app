@@ -19,7 +19,7 @@ function AllGalleries() {
     function handleLoadMore() {
         dispatch(
             getGalleries({
-                page: galleries.current_page + 1,
+                page: galleries?.current_page + 1,
             })
         );
     }
@@ -45,7 +45,7 @@ function AllGalleries() {
             </>
             <button
                 onClick={handleLoadMore}
-                disabled={galleries.current_page == galleries.last_page}
+                disabled={galleries?.current_page == galleries?.last_page}
             >
                 Load more
             </button>

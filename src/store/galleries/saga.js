@@ -39,7 +39,6 @@ function* getGalleriesHandler({ payload }) {
 }
 function* getGalleriesByTermHandler({ payload }) {
     try {
-        console.log(payload);
         const galleries = yield call(galleryService.getByTerm, { term: payload.term, author: payload.author });
         yield put(setAuthorGallery(galleries.galleries));
         yield put(setGalleries(galleries.galleries));

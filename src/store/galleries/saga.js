@@ -24,7 +24,7 @@ import {
 
 function* getGalleriesHandler({ payload }) {
     try {
-        const galleries = yield call(galleryService.getAll);
+        const galleries = yield call(galleryService.getAll, payload?.page);
 
 
         if (payload?.page > 1) {
